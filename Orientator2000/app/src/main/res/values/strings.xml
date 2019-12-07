@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Orientator 2000</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Открытые двери</string>
+    <string name="title_dashboard">Пути студентов</string>
+    <string name="title_notifications">Личный кабинет</string>
+    <string name="title_personal_account">Личный кабинет</string>
 </resources>
