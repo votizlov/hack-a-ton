@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
 
     fun addEvents() {
         for (i in 1..5) {
-            events.add(Event(date = "a", description = "a", company = "A"))
+            events.add(Event(date = "00:00:0000", description = "null", company = "null"))
         }
     }
 }

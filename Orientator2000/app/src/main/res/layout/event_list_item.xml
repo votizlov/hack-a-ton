@@ -11,19 +11,19 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:onClick="openEventPage"
-        android:text="TextView" />
+        android:text="00:00:0000" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="null" />
 
     <TextView
         android:id="@+id/company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="null" />
 </LinearLayout>

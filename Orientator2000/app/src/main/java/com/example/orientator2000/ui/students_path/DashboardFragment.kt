@@ -62,7 +62,7 @@ class DashboardFragment : Fragment() {
 
     fun addUsers() {
         for (i in 1..5) {
-            users.add(User(ap = "a", city = "a", desires = "A", type = "a"))
+            users.add(User(ap = "Отличник", city = "Воронеж", desires = "null", type = "null"))
         }
     }
 
