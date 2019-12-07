@@ -1,14 +1,43 @@
 package com.hackaton.finishdown.domain;
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
+
+@Component
+@Entity
+@Table(name = "story")
 public class Story {
 
+    @Id
+    @GeneratedValue
+    private long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "surname")
     private String surname;
+    @Column(name = "story", length = 2024)
     private String story;
-    private String areaOfWork;
-    private String job;
+    @Column(name = "city")
     private String city;
-    private String email;
+    @Column (name = "school")
+    private String school;
+    @ElementCollection
+    private List<String> hobbies;
+    @ElementCollection
+    private List<String> subjects;
+    @Column(name = "performance")
+    private long number;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -34,22 +63,6 @@ public class Story {
         this.story = story;
     }
 
-    public String getAreaOfwork() {
-        return areaOfWork;
-    }
-
-    public void setAreaOfwork(String areaOfWork) {
-        this.areaOfWork = areaOfWork;
-    }
-
-    public String getJob() {
-        return job;
-    }
-
-    public void setJob(String job) {
-        this.job = job;
-    }
-
     public String getCity() {
         return city;
     }
@@ -58,11 +71,37 @@ public class Story {
         this.city = city;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSchool() {
+        return school;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public List<Object> getHobbies() {
+        return new LinkedList<>(hobbies);
+    }
+
+    public void setHobbies(List<Object> hobbies) {
+        this.hobbies = new LinkedList<>();
+        hobbies.forEach(o -> this.hobbies.add((String) o));
+    }
+
+    public List<Object> getSubjects() {
+        return new LinkedList<>(subjects);
+    }
+
+    public void setSubjects(List<Object> subjects) {
+        this.subjects = new LinkedList<>();
+        subjects.forEach(o -> this.subjects.add((String) o));
+    }
+
+    public long getNumber() {
+        return number;
+    }
+
+    public void setNumber(long number) {
+        this.number = number;
     }
 }

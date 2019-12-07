@@ -8,7 +8,7 @@ public class UserInfo {
     private String city;
     private Desires desires;
     private TypeHuman type;
-    private AcademicPerformance ap;
+    private int ap;
 
     public String getCity() {
         return city;
@@ -34,11 +34,11 @@ public class UserInfo {
         this.type = type;
     }
 
-    public AcademicPerformance getAp() {
+    public int getAp() {
         return ap;
     }
 
-    public void setAp(AcademicPerformance ap) {
+    public void setAp(int ap) {
         this.ap = ap;
     }
 }
