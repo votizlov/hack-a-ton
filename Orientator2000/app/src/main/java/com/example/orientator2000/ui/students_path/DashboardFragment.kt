@@ -2,7 +2,6 @@ package com.example.orientator2000.ui.students_path
 
 import android.os.AsyncTask
 import android.os.Bundle
-import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -75,8 +74,8 @@ class DashboardFragment : Fragment() {
             if (success!!) {
                 finish()
             } else {
-                password.error = getString(R.string.error_incorrect_password)
-                password.requestFocus()
+                ap.error = getString(R.string.error_incorrect_password)
+                ap.requestFocus()
             }
         }
 
