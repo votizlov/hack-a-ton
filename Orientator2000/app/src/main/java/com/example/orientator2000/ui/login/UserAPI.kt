@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface UserAPI {
-    @POST("/auth/login")
-    fun search(@Body user: User): Call<User>
+    //@GET("/auth/login")
+    //fun search(@Body user: User): Call<>//Call<User>
 
 }
