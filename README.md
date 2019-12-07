@@ -1,6 +1,6 @@
 # Hackaton 2019 VSU : Finish Down
 
-## Beck-end:
+## Back-end:
 
 Есть две точки данных:
 * index/ - возвращает строку "Hello world"
