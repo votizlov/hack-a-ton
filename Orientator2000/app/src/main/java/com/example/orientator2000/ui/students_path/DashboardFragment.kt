@@ -6,16 +6,30 @@ import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.orientator2000.R
+import com.example.orientator2000.User
+import com.example.orientator2000.ui.NetworkService
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_login.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DashboardFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
+    // Initializing an empty ArrayList to be filled with animals
+    val users: ArrayList<User> = ArrayList()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -26,17 +40,34 @@ class DashboardFragment : Fragment() {
                 ViewModelProviders.of(this).get(DashboardViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_paths, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
+        recyclerView = root.findViewById<RecyclerView>(R.id.students_list).apply {
+            // use this setting to improve performance if you know that changes
+            // in content do not change the layout size of the RecyclerView
+            setHasFixedSize(true)
+
+            // use a linear layout manager
+            layoutManager = LinearLayoutManager(root.context)
+
+            // specify an viewAdapter (see also next example)
+            adapter = viewAdapter
+        }
+
         dashboardViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
     }
 
+    fun addAnimals() {
+        users.add(User(ap = "a",city = "a",))
+    }
+
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    inner class UserLoginTask internal constructor(private val mEmail: String, private val mPassword: String) :Callback<User>,
+    inner class UserLoginTask internal constructor(private val mEmail: String, private val mPassword: String) :
+        Callback<User>,
         AsyncTask<Void, Void, Boolean>() {
         override fun onFailure(call: Call<User>, t: Throwable) {
             //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
