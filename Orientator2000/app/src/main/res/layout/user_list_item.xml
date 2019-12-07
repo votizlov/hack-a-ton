@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_row="4"
+    android:layout_column="4"
+    android:background="@android:drawable/btn_default"
+    android:columnCount="4"
+    android:orientation="vertical"
+    android:rowCount="4">
+
+    <Button
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:onClick="openPersonPage"/>
+
+    <TextView
+        android:id="@+id/tv_animal_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/ap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/desires"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="20sp" />
+
+</GridLayout>
