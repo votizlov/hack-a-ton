@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.orientator2000.ui.home.HomeFragment"
+        android:name="com.example.orientator2000.ui.open_doors.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_open_doors" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.orientator2000.ui.dashboard.DashboardFragment"
+        android:name="com.example.orientator2000.ui.students_path.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_paths" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.orientator2000.ui.notifications.NotificationsFragment"
+        android:name="com.example.orientator2000.ui.personal_account.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_user_properties" />
 </navigation>
