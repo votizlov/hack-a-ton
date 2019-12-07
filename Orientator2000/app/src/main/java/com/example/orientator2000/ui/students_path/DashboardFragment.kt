@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.orientator2000.R
@@ -48,8 +49,10 @@ class DashboardFragment : Fragment() {
             layoutManager = LinearLayoutManager(root.context)
 
             // specify an viewAdapter (see also next example)
-            adapter = viewAdapter
+            adapter = UserAdapter(users,root.context)
         }
+
+        addUsers()
 
         dashboardViewModel.text.observe(this, Observer {
             textView.text = it
@@ -57,14 +60,17 @@ class DashboardFragment : Fragment() {
         return root
     }
 
-    fun addAnimals() {
-        users.add(User(ap = "a",city = "a",))
+    fun addUsers() {
+        for (i in 1..5) {
+            users.add(User(ap = "a", city = "a", desires = "A", type = "a"))
+        }
     }
 
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
+    /*
     inner class UserLoginTask internal constructor(private val mEmail: String, private val mPassword: String) :
         Callback<User>,
         AsyncTask<Void, Void, Boolean>() {
@@ -114,5 +120,5 @@ class DashboardFragment : Fragment() {
             mAuthTask = null
             showProgress(false)
         }
-    }
+    }*/
 }
