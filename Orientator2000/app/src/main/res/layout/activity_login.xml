@@ -110,6 +110,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner4" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="26dp"
@@ -136,6 +137,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText3"
         android:layout_width="326dp"
         android:layout_height="52dp"
         android:layout_marginStart="46dp"
@@ -151,6 +153,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText2"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Записать мои данные в базу"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="409dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
